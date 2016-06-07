@@ -6,7 +6,7 @@
 #define EODCASE  VStype = EOD; return
 #define LARGEST 10000000.0
 
-numeric_err(val,e,s)
+void numeric_err(val,e,s)
 float val;
 EXPRPTR e;
 char *s;
@@ -20,25 +20,25 @@ if (val >= 10000000000.0 || val <= -10000000000.0) {
 }
 }
 
-f_cxfile(e)
+void f_cxfile(e)
 EXPRPTR e;
 {
 }
 
 
-f_eod()
+void f_eod()
 {   
 VSpush; 
 VStype = EOD;  
 }
 
-f_error()
+void f_error()
 {  
 VSpush; 
 VStype = ERROR; 
 }
 
-f_nil()
+void f_nil()
 {   
 VSpush; 
 VStype = NIL;  
@@ -46,7 +46,7 @@ VStype = NIL;
 
 
 
-f_length(e)
+void f_length(e)
 rEXPRPTR e;
 { 
 int strlen(),listlen(),type;
@@ -80,7 +80,7 @@ default:
 
 }
 
-f_swchar(e)
+void f_swchar(e)
 rEXPRPTR e;
 {
 VSpush;
@@ -88,7 +88,7 @@ VStype = SWCHAR;
 VSvalue.swch = e->arg1.i;
 }
 
-f_isword(e)
+void f_isword(e)
 rEXPRPTR e;
 {
 eval(arg1.x);
@@ -110,7 +110,7 @@ default:
 }
 
 
-f_iseod(e)
+void f_iseod(e)
 rEXPRPTR e;
 {
 eval(arg1.x);
@@ -130,7 +130,7 @@ default:
 }
 }
 
-f_iserror(e)
+void f_iserror(e)
 rEXPRPTR e;
 {
 eval(arg1.x);
@@ -149,7 +149,7 @@ default:
 }
 }
 
-f_isatom(e)
+void f_isatom(e)
 rEXPRPTR e;
 {
 eval(arg1.x);
@@ -172,7 +172,7 @@ default:
 }
 }
 
-f_isnumber(e)
+void f_isnumber(e)
 rEXPRPTR e;
 {
 eval(arg1.x);
@@ -195,7 +195,7 @@ default:
 }
 }
 
-f_isnil(e)
+void f_isnil(e)
 rEXPRPTR e;
 {
 eval(arg1.x);
@@ -225,7 +225,7 @@ case EOD:
 
 
 
-f_uminus(e)
+void f_uminus(e)
 rEXPRPTR e;
 {
 eval(arg1.x);
@@ -256,7 +256,7 @@ default:
 }
 
 
-f_not(e)
+void f_not(e)
 rEXPRPTR e;
 {
 eval(arg1.x);
@@ -291,7 +291,7 @@ default:
 }
 }
 
-f_and(e)
+void f_and(e)
 rEXPRPTR e;
 { 
 int type,wval;
@@ -390,7 +390,7 @@ default:
 }
 
 
-f_or(e)
+void f_or(e)
 rEXPRPTR e;
 { 
 int type;
@@ -464,7 +464,7 @@ default:
 }
 
 
-f_num2(e)
+void f_num2(e)
 EXPRPTR e;
 {
 register float temp,temp1,temp2;
@@ -621,7 +621,7 @@ default:
 }
 }
 
-f_log2(e)
+void f_log2(e)
 rEXPRPTR e;
 { 
 int type;
@@ -729,7 +729,7 @@ default:
 }
 }
 
-f_eq(e)
+void f_eq(e)
 rEXPRPTR e;
 {
 VALUEPTR under;
@@ -792,7 +792,7 @@ VStype = WORD;
 VSvalue.wrd = b1;
 }
 
-f_ne(e)
+void f_ne(e)
 rEXPRPTR e;
 {
 VALUEPTR under;
@@ -952,7 +952,7 @@ VSvalue.na.r = e->arg1.c.r;
 }
 
 
-f_word(e)
+void f_word(e)
 rEXPRPTR e;
 {
 VSpush;
@@ -960,7 +960,7 @@ VStype = WORD;
 VSvalue.wrd = e->arg1.i;
 }
 
-f_if(e)
+void f_if(e)
 rEXPRPTR e;
 { 
 int ptype,xtype;

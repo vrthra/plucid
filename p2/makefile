@@ -1,12 +1,12 @@
 DESTDIR=/usr/local/bin
-CFLAGS=-O -DYYMAXDEPTH=900
+CFLAGS=-O -DYYMAXDEPTH=900 -g -Wno-return-type -arch i386
 inc = cmanifs.h cglobals.h
 
 pass2: main.o y.tab.o yylex.o expr.o ;
-	cc -s main.o expr.o y.tab.o yylex.o -o pass2
+	cc -arch i386 -s main.o expr.o y.tab.o yylex.o -o pass2
 
 all:    main.o y.tab.o yylex.o expr.o ;
-	cc -s main.o expr.o y.tab.o yylex.o -o pass2
+	cc -arch i386 -s main.o expr.o y.tab.o yylex.o -o pass2
 	cp pass2 $R$(DESTDIR)/pass2
 	rm -f *.o y.tab.h y.tab.c pass2
 

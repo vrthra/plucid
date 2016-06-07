@@ -8,7 +8,7 @@
 
 #define EODCASE  VStype = EOD; return
 
-f_append(e)
+void f_append(e)
 rEXPRPTR e;
 { 
 	char t1_type,t2_type;
@@ -96,7 +96,7 @@ WORDCELL val;
 }
 
 
-f_cons(e)
+void f_cons(e)
 rEXPRPTR e;
 { 
 	int a_type,b_type;
@@ -160,7 +160,7 @@ WORDCELL a,b;
 	return((CELLPTR)temp);
 }
 
-f_hd(e)
+void f_hd(e)
 rEXPRPTR e;
 {
 	eval(arg1.x);
@@ -188,7 +188,7 @@ rEXPRPTR e;
 	}
 }
 
-f_tl(e)
+void f_tl(e)
 rEXPRPTR e;
 {
 	eval(arg1.x);
@@ -216,7 +216,7 @@ rEXPRPTR e;
 	}
 }
 
-f_islist(e)
+void f_islist(e)
 rEXPRPTR e;
 { 
 	eval(arg1.x);
@@ -238,7 +238,7 @@ rEXPRPTR e;
 	}
 }
 
-f_mknumber(e)
+void f_mknumber(e)
 rEXPRPTR e;
 { 
 	char s[30];
@@ -265,7 +265,7 @@ rEXPRPTR e;
 	}
 }
 
-f_mkstring(e)
+void f_mkstring(e)
 rEXPRPTR e;
 { 
 	CELLPTR findstring();

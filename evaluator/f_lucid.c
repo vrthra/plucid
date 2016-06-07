@@ -99,7 +99,7 @@ rEXPRPTR e;
 }
 
 
-f_filter(e)
+void f_filter(e)
 rEXPRPTR e;
 
 {
@@ -351,7 +351,7 @@ rEXPRPTR e;
 }
 
 
-f_asa(e)
+void f_asa(e)
 EXPRPTR e;
 {
 	STPPTR stpsearch();
@@ -399,7 +399,7 @@ EXPRPTR e;
 	}
 }
 
-f_attime(e)
+void f_attime(e)
 rEXPRPTR e;
 {  
 	int type;

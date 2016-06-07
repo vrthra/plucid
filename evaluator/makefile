@@ -1,6 +1,7 @@
 R=
 DESTDIR=/usr/local/bin
-CFLAGS= -g 
+CFLAGS=-O -DYYMAXDEPTH=900 -g -Wno-return-type -arch i386
+
 LINT= lint -p
 TAR= tar -cv
 mac = imanifs.h iglobals.h
@@ -8,7 +9,7 @@ mac = imanifs.h iglobals.h
 luval: main.o f_flucid.o input.o dynamic.o util.o \
 		      dump.o rupture.o memory.o f_decls.o \
 		      f_alg.o f_lucid.o f_vars.o string.o list.o real.o
-	cc  $(CFLAGS) main.o f_flucid.o memory.o input.o dynamic.o \
+	cc -arch i386  $(CFLAGS) main.o f_flucid.o memory.o input.o dynamic.o \
 		util.o dump.o rupture.o f_decls.o f_alg.o \
 		f_lucid.o f_vars.o string.o real.o list.o -lm \
 		-o luval
@@ -38,7 +39,7 @@ print:
 all: main.o input.o dynamic.o util.o f_flucid.o\
 		      dump.o rupture.o memory.o f_decls.o \
 		      f_alg.o f_lucid.o f_vars.o string.o list.o real.o
-	cc   $(CFLAGS) main.o memory.o input.o dynamic.o \
+	cc  -arch i386  $(CFLAGS) main.o memory.o input.o dynamic.o \
 		util.o dump.o rupture.o f_decls.o f_alg.o \
 		f_lucid.o f_vars.o string.o f_flucid.o list.o real.o -lm \
 		-o luval

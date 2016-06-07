@@ -1,3 +1,4 @@
+export PATH=/usr/local/lib/plucid/:$PATH
 if test -f $1.i
 then rm $1.i
 fi

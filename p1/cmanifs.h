@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <ctype.h>
+
+#define YYSTYPE union stacktype
+
 #include "y.tab.h"
 
 #define NKEYWORDS         162
@@ -18,15 +21,14 @@
 #define F_BODY             10
 #define F_FILE             11
 
-#define YYSTYPE union stacktype
 
 typedef struct RES  RES,  *RESPTR;
 typedef struct EXPR EXPR, *EXPRPTR;
 typedef char              *STRING;
 
 typedef union X_OR_I {
-		       int      i;
-		       float    r;
+		       long      i;
+		       double    r;
 		       char    *s;
 		       EXPRPTR  x;
 		     } X_OR_I;

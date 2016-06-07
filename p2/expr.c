@@ -1,6 +1,8 @@
 #include "cmanifs.h"
 #include "cglobals.h"
 
+void nameclashes(EXPRPTR arg);
+
 EXPRPTR
 pass2(e)
 EXPRPTR e;
@@ -8,7 +10,7 @@ EXPRPTR e;
      nameclashes(e);
      if (noclashes) output(e); }
 
-nameclashes(arg)
+void nameclashes(arg)
 EXPRPTR arg;
 {  return;  }
   /*EXPRPTR file;

@@ -573,7 +573,7 @@ inclusion()
 		in_files[in_index].in_name = strsave(buffer);
 		in_files[in_index].in_line = 1;
 			i = 0;
-			while (((int)c=getc(lexin))=='\n') { }
+			while ((c=getc(lexin))=='\n') { }
 			while ( c !='\n' && c != EOF){
 			       linebuf[i]=c;
 			       c = getc(lexin);
@@ -595,7 +595,7 @@ lexgetc()
 	}else if((curr_index > curr_length)){
 
 			i = 0;
-			while (((int)c=getc(lexin))=='\n') {
+			while ((c=getc(lexin))=='\n') {
 			in_files[in_index].in_line++;
 			newline = true;
 			      }
@@ -608,7 +608,7 @@ lexgetc()
 			curr_length = i;
 			c = linebuf[curr_index];
 	}
-	 if( ((int) c=linebuf[curr_index])==EOF){
+	 if( ( c=linebuf[curr_index])==EOF){
 		if(in_index!=0){
 			in_index--;
 			lexin = in_files[in_index].in_fdes;

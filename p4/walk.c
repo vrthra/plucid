@@ -6,6 +6,11 @@ int lcount = 0;
 int varcount= 0;
 int wherec = 0;
 
+void add_used(char *s);
+void add_defined(char *s);
+void add_used_list(EXPRPTR e);
+void add_defined_list(EXPRPTR e);
+
 pass4(x)
 EXPRPTR x;
 { EXPRPTR remove_decls(),get_globals(),add_valof(),where_to_valof();
@@ -252,7 +257,7 @@ EXPRPTR arg;
 		 return(opnode(arg->arg1.s,arg->arg2.i,
 			get_globals(arg->arg3.x),file));
   case F_VAR:
-	       add_used(arg->arg1.s,funclevel);
+	       add_used(arg->arg1.s);
 	       if (arg->arg2.i==0) return(arg);
 		 return(varnode(arg->arg1.s,arg->arg2.i,
 			 get_globals(arg->arg3.x)));
@@ -330,7 +335,7 @@ export_nglobals()
    valoflevel++;
 }
 
-add_used_list(e)
+void add_used_list(e)
 EXPRPTR e;
 { EXPRPTR tmp;
   tmp = e;
@@ -356,7 +361,7 @@ char *s;
   return(false);
 }
 
-add_defined_list(e)
+void add_defined_list(e)
 EXPRPTR e;
 { EXPRPTR tmp;
   tmp = e;
@@ -376,7 +381,7 @@ EXPRPTR e;
 { formals_list[valoflevel]=e; }
 
 
-add_used(s)
+void add_used(s)
 char *s;
 { EXPRPTR tmp,identlistnode();
   tmp = formals_list[valoflevel];
@@ -398,7 +403,7 @@ char *s;
   used_list[valoflevel]=identlistnode(used_list[valoflevel],s);
 }
 
-add_defined(s)
+void add_defined(s)
 char *s;
 { EXPRPTR tmp,identlistnode();
   tmp = defined_list[valoflevel];

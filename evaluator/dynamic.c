@@ -13,6 +13,8 @@ int used;                 /* count of amount of space used   */
 int marking;
 int sfound,bfound;
 
+void markdp(CELLPTR p);
+void markstrg(CELLPTR p);
 
 initspace()
 {       
@@ -260,7 +262,7 @@ collect()
 
 }
 
-markdp(p)
+void markdp(p)
 CELLPTR p;
 {
 	if(p==NULL) {
@@ -276,8 +278,7 @@ CELLPTR p;
 }
 
 
-markstrg(p)
-CELLPTR p;
+void markstrg(CELLPTR p)
 {
 	if(p==NULL) {
 		fprintf(stderr,"null\n"); 

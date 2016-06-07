@@ -1,6 +1,8 @@
 #include "cmanifs.h"
 #include "cglobals.h"
 
+void dumpattr(SYMPTR x);
+
 SYMPTR
 handle_ident(name,length)
 STRING name; char length;
@@ -380,7 +382,7 @@ SYMPTR p;{
 	dumpattr(p);
 }
 
-dumpattr(x)
+void dumpattr(x)
 SYMPTR x;
 {
 	if(x==NONE_A){

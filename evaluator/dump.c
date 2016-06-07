@@ -4,6 +4,10 @@
 #include <sys/times.h>
 char charcode[5];
 
+void dumpstring(CELLPTR x,int channel,char flag);
+void char_to_code(char c);
+void dumpfile(char *x,EXPRPTR e);
+
 bar(x)
 int x;
 { 
@@ -93,9 +97,7 @@ stats()
 	    ,stpcount);
 }
 
-dumpfile(x,e)
-char *x;
-EXPRPTR e;
+void dumpfile(char *x,EXPRPTR e)
 {  
 	int i,lineno,firstline,lastline,cursorposition;
 	char ch,*filename;
@@ -467,8 +469,7 @@ STRING s;
 	return(s);
 }
 
-char_to_code(c)
-char c;
+void char_to_code(char c)
 {
 	charcode[0]='\\';
 	switch(c){
@@ -662,10 +663,7 @@ int channel;
 	fprintf(channel,"%10s",wordtable[x]);
 }
 
-dumpstring(x,channel,flag)
-CELLPTR x;
-int channel;
-char flag;
+void dumpstring(CELLPTR x,int channel,char flag)
 {   
 	char c;
 	if (!flag) fprintf(channel,"`");

@@ -43,7 +43,7 @@ initialise()
 
 	/* name the directory containing the pLucid library */
 
-	incdir = "/home/gdbrown/nulu/lib";
+	incdir = "/usr/local/lib/plucid";
 
 	/* initialise the simple variables */
 
@@ -96,8 +96,7 @@ char **argv;
 
    }
 
-output(p)
-EXPRPTR p;
+void output(EXPRPTR p)
 {
  EXPRPTR tmp;
  switch(p->f){

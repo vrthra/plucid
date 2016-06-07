@@ -46,7 +46,7 @@ return(temp);
 }
 
 
-f_substr(e)
+void f_substr(e)
 rEXPRPTR e;
 { 
 int i,type1,type2,strlen();
@@ -155,7 +155,7 @@ if (val.strg->data.bits.d_tl == NIL) return(0);
 return(1+strglen(val.strg->data.bits.d_tl,val.strg->tl));
 }
 
-f_scons(e)
+void f_scons(e)
 rEXPRPTR e;
 { 
 int a_type,b_type;
@@ -198,7 +198,7 @@ VStype = QSTRING;
 VSvalue.strg = temp;
 }
 
-f_strconc(e)
+void f_strconc(e)
 rEXPRPTR e;
 { 
 int t1_type,t2_type;
@@ -274,7 +274,7 @@ if ( a->data.bits.d_tl==QSTRING) {
 return(b);
 }
 
-f_isstring(e)
+void f_isstring(e)
 rEXPRPTR e;
 {
 eval(arg1.x);
@@ -296,7 +296,7 @@ default:
 }
 }
 
-f_chr(e)
+void f_chr(e)
 rEXPRPTR e;
 { 
 char s[2];
@@ -329,7 +329,7 @@ default:
 }
 }
 
-f_ord(e)
+void f_ord(e)
 rEXPRPTR e;
 {
 eval(arg1.x);

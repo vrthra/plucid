@@ -1,6 +1,10 @@
 #include "imanifs.h"
 #include "iglobals.h"
 
+void f_atspace(rEXPRPTR e);
+void f_whr(EXPRPTR e);
+
+
 f_elt(e)
 rEXPRPTR e;
 {
@@ -633,7 +637,7 @@ rEXPRPTR e;
 }
 
 
-f_atspace(e)
+void f_atspace(e)
 rEXPRPTR e;
 {  
 	int type;
@@ -688,7 +692,7 @@ rEXPRPTR e;
 	}
 }
 
-f_whr(e)
+void f_whr(e)
 EXPRPTR e;
 {
 	STPPTR ssearch(),stpsearch();

@@ -112,7 +112,7 @@ char **argv;
 
    }
 
-output(p)
+void output(p)
 EXPRPTR p;
 {
  EXPRPTR tmp;

@@ -5,7 +5,7 @@
 
 #define EODCASE  VStype = EOD; return
 
-f_real(e)
+void f_real(e)
 rEXPRPTR e;
 { 
 double cos();
@@ -29,7 +29,7 @@ default:
 }
 }
 
-f_imag(e)
+void f_imag(e)
 rEXPRPTR e;
 { 
 double cos();
@@ -54,7 +54,7 @@ default:
 
 }
 
-f_cos(e)
+void f_cos(e)
 rEXPRPTR e;
 { 
 double cos();
@@ -79,7 +79,7 @@ default:
 
 }
 
-f_sin(e)
+void f_sin(e)
 rEXPRPTR e;
 { 
 double sin();
@@ -104,7 +104,7 @@ default:
 
 }
 
-f_log(e)
+void f_log(e)
 rEXPRPTR e;
 { 
 double log();
@@ -135,7 +135,7 @@ default:
 
 }
 
-f_complex(e)
+void f_complex(e)
 rEXPRPTR e;
 { 
 double pow();
@@ -191,7 +191,7 @@ default:
 
 
 
-f_exp(e)
+void f_exp(e)
 rEXPRPTR e;
 { 
 double pow();
@@ -243,7 +243,7 @@ default:
 
 }
 
-f_sqrt(e)
+void f_sqrt(e)
 rEXPRPTR e;
 { 
 double sqrt();
@@ -274,7 +274,7 @@ default:
 
 }
 
-f_tan(e)
+void f_tan(e)
 rEXPRPTR e;
 { 
 double tan();
@@ -300,7 +300,7 @@ default:
 
 
 
-f_log10(e)
+void f_log10(e)
 rEXPRPTR e;
 { 
 double log10();
@@ -331,7 +331,7 @@ default:
 
 }
 
-f_abs(e)
+void f_abs(e)
 rEXPRPTR e;
 { 
 double fabs();

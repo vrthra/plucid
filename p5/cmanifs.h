@@ -1,12 +1,12 @@
 
 #include <stdio.h>
 #include <ctype.h>
+#define YYSTYPE union stacktype
 #include "y.tab.h"
 
 #define cycle   for(;;)
 #define NL      '\n'
 #define setodd  1|
-#define YYSTYPE union stacktype
 #define YYVCOPY(x,y) copy(  y , sizeof(union stacktype) , 1 ,  x )
 
 #define F_ERES 0

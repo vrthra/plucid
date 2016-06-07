@@ -4,6 +4,9 @@
 
 STRING fname;
 
+void echoexpr(EXPRPTR p);
+void writeexpr(EXPRPTR p);
+
 STRING
 strsave(s)
 char *s;
@@ -163,7 +166,7 @@ STRING s;
 	fputc('\n',outfile);
 }
 
-writeexpr(p)
+void writeexpr(p)
 EXPRPTR p;
 {
 	FPTR q;
@@ -191,7 +194,7 @@ EXPRPTR p;
 	}
 }
 
-echoexpr(p)
+void echoexpr(p)
 EXPRPTR p;
 {
 	FPTR q;

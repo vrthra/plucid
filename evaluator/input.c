@@ -9,8 +9,9 @@
 int inlist = DOTTED_PAIR;
 int read_err,readerr,buffer[200];
 
+void killspace();
 
-f_arg(e)
+void f_arg(e)
 EXPRPTR e;
 {  
 	int val;
@@ -743,7 +744,7 @@ readword()
 	return(i);
 }
 
-killspace()
+void killspace()
 {       
 	int mygetchar();
 	if (ch == EOF ) return;
