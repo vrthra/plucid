@@ -1,12 +1,12 @@
 DESTDIR=/usr/local/bin
-CFLAGS=-O -DYYMAXDEPTH=900 -g -Wno-return-type -arch i386
+CFLAGS=-O -DYYMAXDEPTH=900 -g
 LINT= lint -p
 TAR= tar -cv
 PRINT= pr -t $1 | cat -n
 inc = cmanifs.h cglobals.h
 
 pass4: main.o y.tab.o yylex.o expr.o walk.o;
-	cc -arch i386 -g main.o expr.o y.tab.o yylex.o walk.o -o pass4
+	cc  -g main.o expr.o y.tab.o yylex.o walk.o -o pass4
 
 cp install:
 	cp pass4 $R$(DESTDIR)/pass4
@@ -26,7 +26,7 @@ print:
 
 
 all:    main.o y.tab.o yylex.o expr.o walk.o ;
-	cc -arch i386 -g main.o expr.o y.tab.o yylex.o walk.o -o pass4
+	cc  -g main.o expr.o y.tab.o yylex.o walk.o -o pass4
 	cp pass4 $R$(DESTDIR)/pass4
 	rm -f *.o y.tab.h y.tab.c pass4
 

@@ -5,7 +5,7 @@
 
 #define EODCASE  VStype = EOD; return
 #define LARGEST 10000000.0
-
+int listlen(STRING, WORDCELL);
 void numeric_err(val,e,s)
 float val;
 EXPRPTR e;
@@ -49,7 +49,7 @@ VStype = NIL;
 void f_length(e)
 rEXPRPTR e;
 { 
-int strlen(),listlen(),type;
+int type;
 eval(arg1.x);
 type = VStype;
 switch(VStype)

@@ -3,6 +3,7 @@
 
 void f_atspace(rEXPRPTR e);
 void f_whr(EXPRPTR e);
+STPPTR ssearch(),stpsearch(long, STRING, STRING);
 
 
 f_elt(e)
@@ -45,7 +46,6 @@ rEXPRPTR e;
 	COORDS  xyz;
 	int tmp,dim;
 	rSTPPTR s, t, p;
-	STPPTR ssearch(),stpsearch();
 	dim = e->dim;
 	s = STPSs;
 	t = STPSt;

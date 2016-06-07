@@ -8,7 +8,7 @@
 %{
 #include "cmanifs.h"
 #include "cglobals.h"
-EXPRPTR opnode(),wherenode(),defnode(),declnode(),varnode();
+EXPRPTR opnode(),wherenode(),defnode(STRING,int,STRING,STRING),declnode(),varnode();
 EXPRPTR connode(),f_connode(),filenode();
 EXPRPTR identlistnode(),listnode();
 %}

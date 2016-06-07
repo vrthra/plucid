@@ -254,7 +254,6 @@ struct {
 yylex()
 {
 	int k;
-	STRING synfind(),strsave(),getident(),getword2(),getstring(),getword();
 	float getnum();
 	while(iswhite(c=lexgetc()));
 	startoflex = curr_index;

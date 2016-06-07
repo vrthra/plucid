@@ -141,7 +141,6 @@ int argc;
 char **argv;
 {
 
-	STRING strsave(),calloc();
 	EXPRPTR readexpr();
 	int i, num, k,nwords;
 	STRING p,code_to_char();

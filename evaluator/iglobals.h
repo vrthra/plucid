@@ -1,4 +1,5 @@
-
+#include <stdlib.h>
+#include <string.h>
 int false, true;
 #define MAXFUNCS       105 
 #define copy(x,y) x = y

@@ -5,9 +5,10 @@
  *      all code for input to the interpreter is local to this file
  */
 
-
+STRING ngc_strsave(char*);
 int inlist = DOTTED_PAIR;
 int read_err,readerr,buffer[200];
+char *ngc_calloc(int n);
 
 void killspace();
 
@@ -210,7 +211,6 @@ int
 read_p_item(v)
 CELLUNION *v;
 {
-	char *alloc();
 	int mygetchar();
 	CELLPTR readlist(),readstring();
 	char is_word();
@@ -293,7 +293,6 @@ findword(s)
 STRING s;
 {
 	int i;
-	STRING ngc_strsave();
 	for(i=0; i<wordquan; i++){
 		if(!strcmp(s,wordtable[i])){
 
@@ -726,7 +725,6 @@ readword()
 	int i;
 	char buffer[120];
 	int l;
-	STRING ngc_strsave();
 
 	p = buffer;
 	for(*p++=ch; isalnum(*p=mygetchar()); p++);
@@ -759,7 +757,7 @@ strsave(s)
 char *s; 
 {
 	int n;
-	char *p, *calloc();
+	char *p;
 	n = strlen(s);
 	if ((p = calloc(1,n+1))!=NULL)
 		strcpy(p,s);
@@ -771,7 +769,7 @@ ngc_strsave(s)
 char *s; 
 {
 	int n;
-	char *p, *ngc_calloc();
+	char *p;
 	n = strlen(s);
 	if ((p = ngc_calloc(n+1))!=NULL)
 		strcpy(p,s);

@@ -15,11 +15,12 @@ int sfound,bfound;
 
 void markdp(CELLPTR p);
 void markstrg(CELLPTR p);
+char* sbrk(int);
 
 initspace()
 {       
 	int i,rage;
-	char  *sbrk(), *morefrees();
+	char *morefrees();
 	dynasizes[0] = 24;
 	dynasizes[1] = 36;
 	rage = 1;

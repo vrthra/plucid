@@ -49,7 +49,7 @@ return(temp);
 void f_substr(e)
 rEXPRPTR e;
 { 
-int i,type1,type2,strlen();
+int i,type1,type2;
 char *p,*temps,s[200],buff[200];
 CELLPTR temp,findstring();
 CELLUNION val1,val2;

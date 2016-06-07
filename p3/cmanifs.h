@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <ctype.h>
+#include <stdlib.h>
 #define YYSTYPE union stacktype
 #include "y.tab.h"
 
@@ -53,6 +54,8 @@ struct EXPR {
 	     } ;
 
 typedef char *STRING;
+STRING strsave(STRING),getword(char),getword2(int),getstring(char),getident(int),synfind(STRING);
+
 
 union stacktype{
 

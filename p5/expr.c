@@ -16,7 +16,6 @@ filenode(filename,first_line,last_line,cursor_position)
 int filename;
 int first_line,last_line,cursor_position;
 {
-	STRING calloc(),strsave();
 	EXPRPTR p;
 	p = (EXPRPTR) calloc(1, sizeof(Q_EXPR));
 	p->dim = 0;
@@ -42,7 +41,6 @@ EXPRPTR
 connode(f,n)
 int f,n;
 {
-	STRING calloc();
 	EXPRPTR p;
 	p = (EXPRPTR) calloc(1, sizeof(U_EXPR));
 	p->dim = 0;
@@ -55,7 +53,6 @@ EXPRPTR
 f_connode(n)
 float n;
 {
-	STRING calloc();
 	EXPRPTR p;
 	p = (EXPRPTR) calloc(1, sizeof(U_EXPR));
 	p->dim = 0;
@@ -69,7 +66,6 @@ varnode(type,v)
 int type;
 SYMPTR v;
 {
-	STRING calloc();
 	EXPRPTR p;
 	F_STACKPTR f_env;
 	int i, placepop, timepop;
@@ -134,7 +130,6 @@ SYMPTR v;
 
 pushexpr()
 {
-	STRING calloc();
 	E_STACKPTR temp;
 	/* push the location of the new expression list onto parm_stack */
 	temp = (E_STACKPTR) calloc(1, sizeof(E_STACK));
@@ -146,7 +141,6 @@ pushexpr()
 appeexpr(e)
 EXPRPTR e;
 {
-	STRING calloc();
 	E_LISTPTR new;
 	new = (E_LISTPTR) calloc(1,sizeof(E_LIST));
 	new->el_expr = e;
@@ -157,7 +151,6 @@ EXPRPTR e;
 
 defineparms()
 {
-	STRING calloc();
 	E_LISTPTR scan, temp;
 	int flag;
 
@@ -200,7 +193,6 @@ int f,n;
 EXPRPTR a;
 EXPRPTR file;
 {
-	STRING calloc();
 	EXPRPTR p;
 	p = (EXPRPTR) calloc(1, sizeof(B_EXPR));
 	p->f = (FUNCTION) f;
@@ -216,7 +208,6 @@ int f,n;
 EXPRPTR a, b;
 EXPRPTR file;
 {
-	STRING calloc();
 	EXPRPTR p;
 	p = (EXPRPTR) calloc(1,sizeof(T_EXPR));
 	p->f = (FUNCTION) f;
@@ -234,7 +225,6 @@ int f,n;
 EXPRPTR b,c,d;
 EXPRPTR file;
 {
-	STRING calloc();
 	EXPRPTR p;
 	p = (EXPRPTR) calloc(1,sizeof(Q_EXPR));
 	p->f =  (FUNCTION) f;
@@ -250,8 +240,6 @@ define(s,e)
 SYMPTR s;
 EXPRPTR e;
 {
-	STRING calloc();
-	STRING strsave();
 	 int flag;
 	 flag=1;
 	if(s->attr&DEF_A){

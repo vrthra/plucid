@@ -9,7 +9,6 @@ void pass1(EXPRPTR e)
 stripstring(char *s)
 {
 int n;
-STRING strsave();
 EXPRPTR connode();
 for (n=0; (isalpha(*s)|| *s == '@'); s++) { n++; }
 s++;
@@ -78,7 +77,6 @@ STRING
 stripname(s)
 char s[];
 {
-STRING strsave();
 char buff[20];
 int n;
 for (n=0; (isalpha(*s)|| *s == '@'); s++) { buff[n]= *s; n++; }

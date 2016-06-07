@@ -26,8 +26,6 @@ struct {
 yylex()
 {
 	int k;
-	STRING strsave();
-	STRING getstring(),getword();
 	float getnum();
 
 	while(iswhite(c=lexgetc()));

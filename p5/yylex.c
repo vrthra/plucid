@@ -19,9 +19,6 @@
 yylex()
 {
 	int k;
-	STRING strsave();
-	STRING getstring(),getword();
-	SYMPTR handle_ident();
 	float getnum();
 	while(iswhite(c=lexgetc()));
 	if ((c=='@'||c== '_'||isalpha(c))&&c!=EOF)
@@ -83,7 +80,6 @@ findstring(s)
 STRING s;
 {
 	int i;
-	STRING strsave();
 	for(i=0; i<stringcount; i++){
 		if(!strcmp(s,stringtable[i])){
 
@@ -101,7 +97,6 @@ findword(s)
 STRING s;
 {
 	int i;
-	STRING strsave();
 	for(i=0; i<wordcount; i++){
 		if(!strcmp(s,wordtable[i])){
 

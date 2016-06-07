@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <ctype.h>
+#include <stdlib.h>
+#include <string.h>
 
 #define YYSTYPE union stacktype
 
@@ -25,6 +27,7 @@
 typedef struct RES  RES,  *RESPTR;
 typedef struct EXPR EXPR, *EXPRPTR;
 typedef char              *STRING;
+STRING strsave(STRING),getword(char),getword2(int),getstring(char),getident(int),synfind(STRING);
 
 typedef union X_OR_I {
 		       long      i;

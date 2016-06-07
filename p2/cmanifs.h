@@ -53,6 +53,8 @@ struct EXPR {
 	     } ;
 
 typedef char *STRING;
+STRING strsave(STRING),getword(char),getword2(int),getstring(char),getident(int),synfind(STRING);
+
 
 union stacktype{
 

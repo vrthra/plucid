@@ -11,7 +11,7 @@ STRING
 strsave(s)
 char *s;
     {   int n;
-	 STRING p, calloc();
+	 STRING p;
 	 n=strlen(s);
 	  if ( ( p= calloc(1,n+1))==NULL)
 	      fprintf(stderr,"ran out of space\n");
@@ -44,8 +44,6 @@ initialise(argc,argv)
 int argc;
 char **argv;
 {
-	   STRING calloc();
-	STRING strsave();
 	int i, j;
 	extern FILE *lexin;
 	char *temp;
@@ -159,7 +157,7 @@ accept()
 writename(s)
 STRING s;
 {
-	STRING p, calloc();
+	STRING p;
 	for(p=s;*p!=NULL;p++){
 		fputc(*p,outfile);
 	}
